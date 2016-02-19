@@ -23,12 +23,43 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-	Route::pattern('id','[0-9]+');
+	
+	Route::get('/', function(){
+		
+		return view('index');
+	});
+	
+	Route::get('about', function(){
+		
+		return view('about');
+	});
+	
+	Route::get('services', function(){
+		
+		return view('services');
+	});
+	
+	Route::get('portfolio', function(){
+		
+		return view('portfolio');
+	});
+	
+	Route::get('contact', function(){
+		
+		return view('contact');
+	});
+	
+/* 	Route::pattern('id','[0-9]+');
 
 	Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 	
 	Route::get('post/create', ['as' => 'posts.create', 'uses' => 'PostsController@create']);
 	Route::get('post/{id}'  , ['as' => 'posts.show'  , 'uses' => 'PostsController@show']);
+	
+	Route::get('hello', function(){
+		return view('hello');
+		
+	});
 	
 	Route::group(['prefix' => 'admin'], function(){
 		Route::get('post', ['as' => 'post',function () {
@@ -47,10 +78,10 @@ Route::group(['middleware' => ['web']], function () {
 		});	
 			
 	});
-	
+ */	
 
-	Route::get('hello/{name?}', ['as' => 'hello',function($name = '') {
+	/* Route::get('hello/{name?}', ['as' => 'hello',function($name = '') {
 
 		return 'Hello, '.$name;
-	}])->where('name','[a-z]+');
+	}])->where('name','[a-z]+'); */
 });

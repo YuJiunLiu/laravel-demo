@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class PostsController extends Controller
 {
     public function create() {
-		return 'Create Post';
+		return view('posts/create');
 	}
 	
 	public function show($id) {
